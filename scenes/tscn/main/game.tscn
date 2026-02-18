@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://dgj675icwjn2h"]
+[gd_scene load_steps=9 format=4 uid="uid://dgj675icwjn2h"]
 
+[ext_resource type="Script" uid="uid://cc8kqvgtttmdb" path="res://ui/game.gd" id="1_dpgb4"]
 [ext_resource type="Texture2D" uid="uid://ut26l4yygkgg" path="res://assets/sprites/tile.png" id="1_fxgs1"]
 [ext_resource type="Texture2D" uid="uid://d28l1sfrq7klv" path="res://assets/sprites/extra_tile.png" id="2_w276e"]
+[ext_resource type="Script" uid="uid://cc2t7i0c00nss" path="res://ui/unit_view.gd" id="4_5t6t7"]
+[ext_resource type="Script" uid="uid://cauikdefbvm6x" path="res://ui/board_view.gd" id="5_1yvkj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6rh1"]
 texture = ExtResource("1_fxgs1")
@@ -19,6 +22,7 @@ sources/0 = SubResource("TileSetAtlasSource_h6rh1")
 sources/1 = SubResource("TileSetAtlasSource_dpgb4")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_dpgb4")
 
 [node name="Board" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -26,3 +30,7 @@ tile_map_data = PackedByteArray("AAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAA
 tile_set = SubResource("TileSet_5t6t7")
 
 [node name="Units" type="Node2D" parent="."]
+script = ExtResource("4_5t6t7")
+
+[node name="BoardView" type="Node2D" parent="."]
+script = ExtResource("5_1yvkj")
