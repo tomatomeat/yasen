@@ -26,10 +26,10 @@ func _init(p_id := 0, p_owner := 0, p_data: UnitData = null, p_position := Vecto
 	facing = p_facing
 
 func rotate_left() -> void:
-	facing = wrapi(facing - 1, 0, 4)
+	facing = wrapi(facing - 1, 0, 4) as Facing
 
 func rotate_right() -> void:
-	facing = wrapi(facing + 1, 0, 4)
+	facing = wrapi(facing + 1, 0, 4) as Facing
 
 func get_forward_vector() -> Vector2i:
 	match facing:
