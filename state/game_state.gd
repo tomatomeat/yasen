@@ -78,7 +78,7 @@ func apply_move(unit_id: int, target: Vector2i) -> bool:
 		return false
 
 	if occupant != null:
-		_resolve_attack(attacker = unit, defender = occupant)
+		_resolve_attack(unit, occupant)
 	else:
 		if not setup.is_playable_cell(target):
 			return false

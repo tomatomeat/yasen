@@ -18,9 +18,10 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
-		var first_unit := _game_state.get_units_for_player(_game_state.active_player).front()
-		if first_unit == null:
+		var active_units: Array[UnitState] = _game_state.get_units_for_player(_game_state.active_player)
+		if active_units.is_empty():
 			return
+		var first_unit: UnitState = active_units[0]
 		if event.keycode == KEY_Q:
 			_game_state.apply_rotate(first_unit.unit_instance_id, false)
 		elif event.keycode == KEY_E:

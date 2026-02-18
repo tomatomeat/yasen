@@ -3,7 +3,7 @@ class_name GameSetup
 
 const BOARD_COLS := 7
 const BOARD_ROWS := 9
-const EXTRA_ROWS := PackedInt32Array([0, 8])
+const EXTRA_ROWS := [0, 8]
 
 @export var board_size := Vector2i(BOARD_COLS, BOARD_ROWS)
 @export var player_count := 2
